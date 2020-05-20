@@ -1,0 +1,13 @@
+backend:
+  name: github
+  repo: BJJohnston/blindfold
+media_folder: static/assets
+public_folder: /assets
+collections:
+  - name: index
+    label: index
+    folder: index
+    create: true
+    fields:
+      - { name: path, label: Path }
+      - { name: title, label: Title }
