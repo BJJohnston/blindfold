@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Forty V2",
+    title: "Blindfold",
     author: "Hunter Chang",
     description: "A Gatsby.js V2 Starter based on Forty by HTML5 UP"
   },
@@ -17,6 +17,13 @@ module.exports = {
         theme_color: '#663399',
         display: 'minimal-ui',
         icon: 'src/assets/images/website-icon.png', // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
       },
     },
     'gatsby-plugin-sass',

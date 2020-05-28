@@ -1,10 +1,23 @@
 import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 
-const Banner = (props) => (
+export default function Banner(){
+    return (
+            <StaticQuery
+      query={graphql`
+        query HeadingQuery {
+          site {
+            siteMetadata {
+              title
+            }
+          }
+        }
+      `}
+       render={data => (
     <section id="banner" className="major">
         <div className="inner">
             <header className="major">
-                <h1>Hi, my name is Forty</h1>
+                <h1>{data.site.siteMetadata.title}</h1>
             </header>
             <div className="content">
                 <p>A responsive site template designed by HTML5 UP<br />
@@ -15,6 +28,7 @@ const Banner = (props) => (
             </div>
         </div>
     </section>
+)}
+/>
 )
-
-export default Banner
+}
