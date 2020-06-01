@@ -9,5 +9,6 @@ collections:
     folder: src/pages/markdown/home
     create: true
     fields:
+       - { name: templateKey, label: Template Key, widget: string }
        - { name: title, label: Title, widget: string }
        - { name: description, label: Description, widget: string }
