@@ -4,10 +4,10 @@ backend:
 media_folder: static/assets
 public_folder: /assets
 collections:
-  - name: index
-    label: index
-    folder: index
+  - name: home
+    label: home
+    folder: src/pages/markdown/home
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: title, label: Title }
+      - { name: title, label: Title, widget: string }, 
+      - { name: description, label: Description, widget: string }
