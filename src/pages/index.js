@@ -13,7 +13,7 @@ import pic06 from '../assets/images/pic06.jpg'
 
 class HomeIndex extends React.Component {
     render() {
-
+        const { data } = this.props;
         return (
             <Layout>
                 <Helmet
@@ -25,7 +25,7 @@ class HomeIndex extends React.Component {
                 >
                 </Helmet>
 
-                <Banner />
+                <Banner title={data.allMarkdownRemark.edges[0].node.frontmatter.title}/>
 
                 <div id="main">
                     <section id="one" className="tiles">
@@ -91,3 +91,18 @@ class HomeIndex extends React.Component {
 }
 
 export default HomeIndex
+
+export const query = graphql`
+  {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            templateKey
+            description
+          }
+        }
+      }
+    }
+  }`
