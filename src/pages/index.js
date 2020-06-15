@@ -25,7 +25,9 @@ class HomeIndex extends React.Component {
                 >
                 </Helmet>
 
-                <Banner title={data.allMarkdownRemark.edges[0].node.frontmatter.title}/>
+                <Banner title={data.allMarkdownRemark.edges[0].node.frontmatter.title} 
+                description={data.allMarkdownRemark.edges[0].node.frontmatter.description}
+                />
 
                 <div id="main">
                     <section id="one" className="tiles">
